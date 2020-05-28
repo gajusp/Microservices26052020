@@ -35,12 +35,17 @@ public class ClientApplication {
 	public String callToServiceApplication() {
 		RestTemplate template = builder.build();
 
-		InstanceInfo info = client.getNextServerFromEureka("service", false);
+		InstanceInfo info = client.getNextServerFromEureka("SERVICE", false);
 
 		String homePageUrl = info.getHomePageUrl();
 
 		ResponseEntity<String> exchange = template.exchange(homePageUrl, HttpMethod.GET, null, String.class);
-
+// Address Line
+		
+// Headers
+		
+// BODY
+		
 		return exchange.getBody();
 	}
 
